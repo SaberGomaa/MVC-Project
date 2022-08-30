@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "login";
 }
-
+<h1>@ViewBag.ms</h1>
 <form method="post">
     <table class="table">
         <tr>
@@ -15,14 +15,22 @@
             <td>@Html.PasswordFor(n => n.password)</td>
             <td>@Html.ValidationMessageFor(n => n.password)</td>
         </tr>
+        <tr>
+            <td></td>
+            <td>@Html.CheckBox("saveme", false) remember me</td>
+            <td></td>
+        </tr>
         <br />
         <br />
         <tr>
+            <td>@if (ViewBag.msg != null)
+            {@ViewBag.msg;
+        }</td>
             <td></td>
-            <td>@if (ViewBag.msg != null){@ViewBag.msg;}</td>
             <td></td>
         </tr>
     </table>
+    <br />
     <button type="submit" value="login" class="btn btn-info">Login</button>
 
 </form>

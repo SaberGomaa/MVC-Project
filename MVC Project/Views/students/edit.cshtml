@@ -2,45 +2,59 @@
 @{
     ViewBag.Title = "edit";
 }
+@if (Session["userid"] != null)
+{
+    <form method="post">
+        <table>
+            <tr>
+                <td>@Html.LabelFor(e => e.name)</td>
+                <td>@Html.EditorFor(e => e.name)</td>
+                <td>@Html.ValidationMessageFor(e => e.name)</td>
+            </tr>
+            <tr>
+                <td>age</td>
+                <td>@Html.EditorFor(e => e.age)</td>
+                <td>@Html.ValidationMessageFor(e => e.age)</td>
 
-<form method="post">
-    <table>
-        <tr>
-            <td>@Html.LabelFor(e => e.name)</td>
-            <td>@Html.EditorFor(e => e.name)</td>
-            <td>@Html.ValidationMessageFor(e => e.name)</td>
-        </tr>
-        <tr>
-            <td>age</td>
-            <td>@Html.EditorFor(e => e.age)</td>
-            <td>@Html.ValidationMessageFor(e => e.age)</td>
+            </tr>
+            <tr>
+                <td>address</td>
+                <td>@Html.EditorFor(e => e.address)</td>
+                <td>@Html.ValidationMessageFor(e => e.address)</td>
 
-        </tr>
-        <tr>
-            <td>address</td>
-            <td>@Html.EditorFor(e => e.address)</td>
-            <td>@Html.ValidationMessageFor(e => e.address)</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>@Html.EditorFor(e => e.Email)</td>
+                <td>@Html.ValidationMessageFor(e => e.Email)</td>
 
-        </tr>
-        <tr>
-            <td>Email</td>
-            <td>@Html.EditorFor(e => e.Email)</td>
-            <td>@Html.ValidationMessageFor(e => e.Email)</td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td>@Html.DropDownListFor(e => e.departmentid, (SelectList)ViewBag.st)</td>
+            </tr>
+        </table>
 
-        </tr>
-        <tr>
-            <td>Department</td>
-            <td>@Html.DropDownListFor(e => e.departmentid, (SelectList)ViewBag.st)</td>
-        </tr>
-    </table>
-
-    <input type="hidden" name="password" value="@(Model.password)" />
-    <input type="hidden" name="confirm_password" value="@(Model.password)" />
-    <input type="hidden" name="confirm_password" value="@(Model.password)" />
-    <input type="hidden" name="img" value="@(Model.img)" />
+        <input type="hidden" name="password" value="@(Model.password)" />
+        <input type="hidden" name="confirm_password" value="@(Model.password)" />
+        <input type="hidden" name="confirm_password" value="@(Model.password)" />
+        <input type="hidden" name="img" value="@(Model.img)" />
 
 
-    <br />
-    <br />
-    <button type="submit">Update</button>
-</form>
+        <br />
+        <br />
+        <button type="submit">Update</button>
+    </form>
+}
+else
+{
+    <div>
+        <h1> Welcome To Our Website </h1>
+        <p>You Can Register From Link Below</p>
+        <br />
+        <br />
+        @Html.ActionLink("Register", "create", null, new { @class = "btn btn-info" })
+        <br />
+        <br />
+    </div>
+}

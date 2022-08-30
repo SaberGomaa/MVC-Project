@@ -21,7 +21,7 @@ namespace MVC_Project.Controllers
 
             if (s != null)
             {
-                Session.Add("user", s.id);
+                Session.Add("userid", s.id);
                 return RedirectToAction("details", "students", new { id = s.id });
             }
             else
@@ -30,5 +30,12 @@ namespace MVC_Project.Controllers
                 return View();
             }
         }
+
+
+        public ActionResult logout()
+        {
+            return RedirectToAction("login");
+        }
+
     }
 }

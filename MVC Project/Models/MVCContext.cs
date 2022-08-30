@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace MVC_Project.Models
 {
-    public partial class Context : DbContext
+    public partial class MVCContext : DbContext
     {
-        public Context()
-            : base("name=MVCContext")
+        public MVCContext()
+            : base("name=MVCContext1")
         {
         }
 

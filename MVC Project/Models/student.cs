@@ -20,7 +20,7 @@ namespace MVC_Project.Models
         [Required]
         public string address { get; set; }
 
-        public int? deptid { get; set; }
+        public int departmentid { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -32,8 +32,6 @@ namespace MVC_Project.Models
 
         [Required]
         public string img { get; set; }
-
-        public int departmentid { get; set; }
 
         public virtual department department { get; set; }
     }

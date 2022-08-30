@@ -1,0 +1,27 @@
+﻿@model List<MVC_Project.Models.student>
+@{
+    ViewBag.Title = "display";
+}
+
+<table class="table-active table" >
+    <tr>
+        <th>Name</th>
+        <th>address</th>
+        <th>age</th>
+        <th>Email</th>
+        <th>DeptName</th>
+    </tr>
+    @{
+        foreach (var i in Model)
+        {
+        <tr>
+            <td>@i.name</td>
+            <td>@i.address</td>
+            <td>@i.age</td>
+            <td>@i.Email</td>
+            <td>@i.department.name</td>
+        </tr>
+        }
+    }
+</table>
+

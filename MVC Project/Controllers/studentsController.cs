@@ -28,15 +28,47 @@ namespace MVC_Project.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult create(student s , HttpPostedFileBase photo)
+        public ActionResult create(student s, HttpPostedFileBase photo)
         {
-            photo.SaveAs(Server.MapPath("~/attach/" + photo.FileName));
-            
-            s.img = photo.FileName;
-            context.students.Add(s);
-            context.SaveChanges();
+            if (!ModelState.IsValid)
+            {
+                photo.SaveAs(Server.MapPath("~/attach/" + photo.FileName));
 
-            return RedirectToAction("display");
+                s.img = photo.FileName;
+                context.students.Add(s);
+                context.SaveChanges();
+
+                return RedirectToAction("display");
+            }
+            else
+            {
+                List<department> dept = context.departments.ToList();
+
+                SelectList st = new SelectList(dept, "id", "name");
+
+                ViewBag.st = st;
+
+                return View(s);
+            }
+        }
+
+        public ActionResult details(int id)
+        {
+            student s = context.students.Find(id);
+
+            return View(s);
+        }
+
+        public ActionResult edit(int id)
+        {
+            List<department> dept = context.departments.ToList();
+
+            SelectList st = new SelectList(dept, "id", "name");
+
+            ViewBag.st = st;
+            student s = context.students.Find(id);
+
+            return View(s);
         }
 
     }

@@ -247,6 +247,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\students\display.cshtml" />
     <Content Include="Views\students\create.cshtml" />
+    <Content Include="Views\students\details.cshtml" />
+    <Content Include="Views\students\edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

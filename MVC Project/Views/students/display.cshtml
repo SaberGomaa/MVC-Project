@@ -18,6 +18,7 @@
         <th>@Html.DisplayNameFor(e => Model[0].department.name)</th>
         <th>Details</th>
         <th>Edit</th>
+        <td>Delete</td>
     </tr>
     @{
         foreach (var i in Model)
@@ -31,6 +32,7 @@
             <td>@i.department.name</td>
             <td>@Html.ActionLink("View details", "details", new { id = i.id })</td>
             <td>@Html.ActionLink("Edit", "edit", new { id = i.id } , new { @class="btn btn-info" })</td>
+            <td>@Html.ActionLink("Delete" , "delete" , new {id=i.id} , new {@class="btn btn-danger"})</td>
         </tr>
         }
     }

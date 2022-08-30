@@ -75,10 +75,6 @@ namespace MVC_Project.Controllers
         public ActionResult edit(student s)
         {
             //student student = context.students.Find(s.id);
-            //s.confirm_password = student.password;
-            //s.password = student.password;
-            //s.img = student.img;
-           
             //student.name = s.name;
             //student.address = s.address;
             //student.age = s.age;
@@ -90,6 +86,15 @@ namespace MVC_Project.Controllers
             context.SaveChanges();
             return RedirectToAction("display" , "students");
         }
+
+
+        public ActionResult delete(int id)
+        {
+            context.students.Remove(context.students.Find(id));
+            context.SaveChangesAsync();
+            return RedirectToAction("display");
+        }
+
     }
 
 }

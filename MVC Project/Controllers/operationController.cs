@@ -46,7 +46,16 @@ namespace MVC_Project.Controllers
         }
 
 
-       
+        public ActionResult logout()
+        {
+            Session["userid"] = null;
+
+            HttpCookie c = new HttpCookie("mvc");
+            c.Expires = DateTime.Now.AddDays(-50);
+            Response.Cookies.Add(c);
+
+            return RedirectToAction("login");
+        }
 
     }
 }

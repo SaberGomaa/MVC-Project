@@ -209,11 +209,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\operationController.cs" />
     <Compile Include="Controllers\studentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\department.cs" />
+    <Compile Include="Models\logindata.cs" />
     <Compile Include="Models\MVCContext.cs" />
     <Compile Include="Models\student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -249,6 +251,7 @@
     <Content Include="Views\students\create.cshtml" />
     <Content Include="Views\students\details.cshtml" />
     <Content Include="Views\students\edit.cshtml" />
+    <Content Include="Views\operation\login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

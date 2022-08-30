@@ -1,0 +1,28 @@
+﻿@model logindata
+@{
+    ViewBag.Title = "login";
+}
+
+<form method="post">
+    <table class="table">
+        <tr>
+            <td>Email</td>
+            <td>@Html.EditorFor(n => n.email)</td>
+            <td>@Html.ValidationMessageFor(n => n.email)</td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td>@Html.PasswordFor(n => n.password)</td>
+            <td>@Html.ValidationMessageFor(n => n.password)</td>
+        </tr>
+        <br />
+        <br />
+        <tr>
+            <td></td>
+            <td>@if (ViewBag.msg != null){@ViewBag.msg;}</td>
+            <td></td>
+        </tr>
+    </table>
+    <button type="submit" value="login" class="btn btn-info">Login</button>
+
+</form>

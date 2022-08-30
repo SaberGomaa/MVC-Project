@@ -2,8 +2,13 @@
 @{
     ViewBag.Title = "display";
 }
+<br />
+<br />
+@Html.ActionLink("Create", "create", null, new { @class = "btn btn-info" })
+<br />
+<br />
 
-<table class="table-active table" >
+<table class="table-bordered table-striped table">
     <tr>
         <th>@Html.DisplayNameFor(e => Model[0].id)</th>
         <th>Name</th>
@@ -15,14 +20,14 @@
     @{
         foreach (var i in Model)
         {
-        <tr>
-            <td>@i.id</td>
-            <td>@i.name</td>
-            <td>@i.address</td>
-            <td>@i.age</td>
-            <td>@i.Email</td>
-            <td>@i.department.name</td>
-        </tr>
+            <tr>
+                <td>@i.id</td>
+                <td>@i.name</td>
+                <td>@i.address</td>
+                <td>@i.age</td>
+                <td>@i.Email</td>
+                <td>@i.department.name</td>
+            </tr>
         }
     }
 </table>

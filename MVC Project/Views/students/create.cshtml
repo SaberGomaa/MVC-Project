@@ -1,0 +1,44 @@
+﻿@model MVC_Project.Models.student
+@{
+    ViewBag.Title = "create";
+}
+
+<form method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>@Html.LabelFor(e => e.name)</td>
+            <td>@Html.EditorFor(e => e.name)</td>
+        </tr>
+        <tr>
+            <td>age</td>
+            <td>@Html.EditorFor(e => e.age)</td>
+        </tr>
+        <tr>
+            <td>address</td>
+            <td>@Html.EditorFor(e => e.address)</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>@Html.EditorFor(e => e.Email)</td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td>@Html.PasswordFor(e => e.password)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(e => e.confirm_password)</td>
+            <td>@Html.PasswordFor(e => e.confirm_password)</td>
+        </tr>
+        <tr>
+            <td>Department</td>
+            <td>@Html.DropDownListFor(e => e.departmentid, (SelectList)ViewBag.st)</td>
+        </tr>
+        <tr>
+            <td>image</td>
+            <td><input type="file" name="photo" /></td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <button type="submit">Register</button>
+</form>

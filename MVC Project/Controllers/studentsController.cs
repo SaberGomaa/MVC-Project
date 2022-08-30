@@ -14,8 +14,31 @@ namespace MVC_Project.Controllers
         public ActionResult display()
         {
             List<student> students = context.students.ToList();
-
             return View(students);
         }
+
+        public ActionResult create()
+        {
+            List<department> dept = context.departments.ToList();
+
+            SelectList st = new SelectList(dept  , "id", "name");
+
+            ViewBag.st = st;
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult create(student s , HttpPostedFileBase photo)
+        {
+            photo.SaveAs(Server.MapPath("~/attach/" + photo.FileName));
+            
+            s.img = photo.FileName;
+            context.students.Add(s);
+            context.SaveChanges();
+
+            return RedirectToAction("display");
+        }
+
     }
+
 }

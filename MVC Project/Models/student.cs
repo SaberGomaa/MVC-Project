@@ -32,6 +32,11 @@ namespace MVC_Project.Models
         [StringLength(50)]
         public string password { get; set; }
 
+        [DisplayName("confirm password")]
+        [NotMapped]
+        public string confirm_password { get; set; }
+
+
         [Required]
         public string img { get; set; }
 

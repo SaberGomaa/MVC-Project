@@ -2,6 +2,7 @@ namespace MVC_Project.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -9,6 +10,7 @@ namespace MVC_Project.Models
     [Table("student")]
     public partial class student
     {
+        [DisplayName("Student ID")]
         public int id { get; set; }
 
         [Required]

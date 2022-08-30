@@ -5,16 +5,18 @@
 
 <table class="table-active table" >
     <tr>
+        <th>@Html.DisplayNameFor(e => Model[0].id)</th>
         <th>Name</th>
         <th>address</th>
         <th>age</th>
         <th>Email</th>
-        <th>DeptName</th>
+        <th>@Html.DisplayNameFor(e => Model[0].department.name)</th>
     </tr>
     @{
         foreach (var i in Model)
         {
         <tr>
+            <td>@i.id</td>
             <td>@i.name</td>
             <td>@i.address</td>
             <td>@i.age</td>

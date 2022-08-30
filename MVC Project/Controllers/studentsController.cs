@@ -39,7 +39,7 @@ namespace MVC_Project.Controllers
                 context.students.Add(s);
                 context.SaveChanges();
 
-                return RedirectToAction("display");
+                return RedirectToAction("login" , "operation");
             }
             else
             {
@@ -94,6 +94,8 @@ namespace MVC_Project.Controllers
             context.SaveChangesAsync();
             return RedirectToAction("display");
         }
+
+
 
     }
 

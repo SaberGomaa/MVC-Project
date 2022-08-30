@@ -20,9 +20,10 @@
         </button>*@
                 @if (Session["userid"] != null)
                 {
-                    @Html.ActionLink("Details", "details", "students", new { area = "" }, new { @class = "navbar-brand" })
-                    @Html.ActionLink("Edit", "edit", "students", new { area = "" }, new { @class = "navbar-brand" })
-                    @Html.ActionLink("Logout", "logout", "opertation", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("ViewAll ", "display", "students", new { id = Session["userid"] }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Details", "details", "students", new { id = Session["userid"] }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Edit", "edit", "students", new { id = Session["userid"] }, new { @class = "navbar-brand" })
+                    <a href="~/operation/logout">Logout</a>
                 }
                 else
                 {

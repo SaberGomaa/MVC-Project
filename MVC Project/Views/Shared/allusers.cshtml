@@ -1,0 +1,32 @@
+﻿@model List<MVC_Project.Models.student>
+
+<table class="table-bordered table-striped table">
+    <tr>
+        <th>@Html.DisplayNameFor(e => Model[0].id)</th>
+        <th>Name</th>
+        <th>address</th>
+        <th>age</th>
+        <th>Email</th>
+        <th>@Html.DisplayNameFor(e => Model[0].department.name)</th>
+        <th>Details</th>
+        <th>Edit</th>
+        <td>Delete</td>
+    </tr>
+    @{
+        foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.id</td>
+                <td>@i.name</td>
+                <td>@i.address</td>
+                <td>@i.age</td>
+                <td>@i.Email</td>
+                <td>@i.department.name</td>
+                <td>@Html.ActionLink("View details", "details", new { id = i.id })</td>
+                <td>@Html.ActionLink("Edit", "edit", new { id = i.id }, new { @class = "btn btn-info" })</td>
+                <td>@Html.ActionLink("Delete", "delete", new { id = i.id }, new { @class = "btn btn-danger" })</td>
+            </tr>
+        }
+    }
+</table>
+

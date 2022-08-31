@@ -9,8 +9,9 @@
     @Html.ActionLink("Create", "create", null, new { @class = "btn btn-info" })
     <br />
     <br />
+    @Html.Partial("allusers")
 
-    <table class="table-bordered table-striped table">
+    @*<table class="table-bordered table-striped table">
         <tr>
             <th>@Html.DisplayNameFor(e => Model[0].id)</th>
             <th>Name</th>
@@ -38,7 +39,7 @@
                 </tr>
             }
         }
-    </table>
+    </table>*@
 }
 else
 {

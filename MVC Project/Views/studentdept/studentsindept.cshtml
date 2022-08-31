@@ -1,0 +1,28 @@
+﻿@using MVC_Project.Models
+
+@{ 
+    List<student> st = ViewBag.st;
+}
+<table class="table-bordered table-striped table">
+    <tr>
+        <th>@Html.DisplayNameFor(e => st[0].id)</th>
+        <th>Name</th>
+        <th>address</th>
+        <th>age</th>
+        <th>Email</th>
+        <th>Details</th>
+    </tr>
+    @{
+        foreach (var i in st)
+        {
+            <tr>
+                <td>@i.id</td>
+                <td>@i.name</td>
+                <td>@i.address</td>
+                <td>@i.age</td>
+                <td>@i.Email</td>
+                <td>@Html.ActionLink("View details", "details", new { id = i.id })</td>
+            </tr>
+        }
+    }
+</table>

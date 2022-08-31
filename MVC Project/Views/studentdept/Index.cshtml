@@ -1,0 +1,22 @@
+﻿@model SelectList
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.DropDownList("dpid", Model)
+
+<div id="d">
+
+</div>
+
+<script src="~/Scripts/jquery-1.8.0.js"></script>
+<script>
+
+     $("#dpid").on("change", function () {
+         let id = $("#dpid").val();
+         $("#d").load("/studentdept/studentsindept/" + id);
+     })
+
+
+</script>
+

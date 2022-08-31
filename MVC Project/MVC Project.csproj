@@ -205,11 +205,13 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\operationController.cs" />
+    <Compile Include="Controllers\studentdeptController.cs" />
     <Compile Include="Controllers\studentsController.cs" />
     <Compile Include="Controllers\testController.cs" />
     <Compile Include="Global.asax.cs">
@@ -255,6 +257,8 @@
     <Content Include="Views\operation\login.cshtml" />
     <Content Include="Views\test\Index.cshtml" />
     <Content Include="Views\Shared\allusers.cshtml" />
+    <Content Include="Views\studentdept\Index.cshtml" />
+    <Content Include="Views\studentdept\studentsindept.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

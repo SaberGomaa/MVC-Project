@@ -14,16 +14,18 @@
         <div class="container" style="">
             <div class="navbar-header">
                 @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar">x1</span>
-                        <span class="icon-bar">x2</span>
-                        <span class="icon-bar">x2</span>
-                    </button>*@
+            <span class="icon-bar">x1</span>
+            <span class="icon-bar">x2</span>
+            <span class="icon-bar">x2</span>
+        </button>*@
                 @if (Session["userid"] != null)
                 {
                     @Html.ActionLink("ViewAll ", "display", "students", new { id = Session["userid"] }, new { @class = "navbar-brand" })
                     @Html.ActionLink("Details", "details", "students", new { id = Session["userid"] }, new { @class = "navbar-brand" })
                     @Html.ActionLink("Edit", "edit", "students", new { id = Session["userid"] }, new { @class = "navbar-brand" })
                     <a href="~/operation/logout">Logout</a>
+                    <a href="~/studentdept/index">Department Students</a>
+
                 }
                 else
                 {

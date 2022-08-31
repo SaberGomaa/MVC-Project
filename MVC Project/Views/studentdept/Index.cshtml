@@ -3,122 +3,36 @@
     ViewBag.Title = "Index";
 }
 
-@Html.DropDownList("dpid", Model)
+@if (Session["userid"] != null)
+{
 
-<div id="d">
+    @Html.DropDownList("dpid", Model)
 
-</div>
+    <div id="d">
 
-<script src="~/Scripts/jquery-1.8.0.js"></script>
-<script>
+    </div>
 
-     $("#dpid").on("change", function () {
-         let id = $("#dpid").val();
-         $("#d").load("/studentdept/studentsindept/" + id);
-     })
-    $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })  $("#dpid").on("change", function () {
-        let id = $("#dpid").val();
-        $("#d").load("/studentdept/studentsindept/" + id);
-    })
+    <script src="~/Scripts/jquery-1.8.0.js"></script>
+    <script>
 
-</script>
+        $("#dpid").on("change", function () {
+            let id = $("#dpid").val();
+            $("#d").load("/studentdept/studentsindept/" + id);
+        })
+
+
+    </script>
+}
+else
+{
+    <div>
+        <h1> Welcome To Our Website </h1>
+        <p>You Can Register From Link Below</p>
+        <br />
+        <br />
+        @Html.ActionLink("Register", "create", null, new { @class = "btn btn-info" })
+        <br />
+        <br />
+    </div>
+}
 

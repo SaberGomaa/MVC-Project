@@ -5,8 +5,8 @@
 
 @if (Session["userid"] != null)
 {
-
-    @Html.DropDownList("dpid", Model)
+    
+    @Html.DropDownList("dpid", Model,new {@class= "w-auto" })
 
     <div id="d">
 

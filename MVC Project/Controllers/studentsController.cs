@@ -123,11 +123,6 @@ namespace MVC_Project.Controllers
             }
         }
 
-        public ActionResult about()
-        {
-            return View();
-        } 
-
     }
 
 }

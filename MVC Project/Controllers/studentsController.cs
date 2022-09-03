@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MVC_Project.Controllers
 {
+    [HandleError]
     public class studentsController : Controller
     {
         MVCContext  context = new MVCContext();
@@ -95,7 +96,37 @@ namespace MVC_Project.Controllers
             return RedirectToAction("display");
         }
 
+        public ActionResult detail(int id)
+        {
+            ViewBag.s = context.students.Find(id); ;
+            return View();
+        }
 
+        public ActionResult check( string Email , int id )
+        {
+            student s = context.students.Where(n => n.Email == Email).FirstOrDefault();
+            if (id == null)
+            {
+           
+                if (s == null)
+                {
+                    return Json(true, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(false, JsonRequestBehavior.AllowGet);
+                }
+            }
+            else 
+            {
+                 return Json(true, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public ActionResult about()
+        {
+            return View();
+        } 
 
     }
 

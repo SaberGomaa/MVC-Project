@@ -1,0 +1,20 @@
+﻿@{
+    Layout = null;
+}
+
+<table class="table table-active">
+    <tr>
+        <td>
+            <img src="~/attach/@ViewBag.s.img" width="250px" height="250px" />
+        </td>
+        <td>
+            <h3>Hi , @ViewBag.s.name</h3>
+            <div class="table-bordered">
+                <p>Your Email @ViewBag.s.Email</p>
+                <p>Address @ViewBag.s.address</p>
+                <p>Age @ViewBag.s.age</p>
+                <p>Department , @ViewBag.s.department.name</p>
+            </div>
+        </td>
+    </tr>
+</table>

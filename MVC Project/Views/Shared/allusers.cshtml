@@ -1,5 +1,25 @@
 ﻿@model List<MVC_Project.Models.student>
 
+
+<div class="modal fade" id="d1" ">
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header">
+                Details
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 <table class="table-bordered table-striped table">
     <tr>
         <th>@Html.DisplayNameFor(e => Model[0].id)</th>
@@ -22,7 +42,11 @@
                 <td>@i.age</td>
                 <td>@i.Email</td>
                 <td>@i.department.name</td>
-                <td>@Html.ActionLink("View details", "details", new { id = i.id })</td>
+                <td>@Ajax.ActionLink("Details" , "detail" , new {id = i.id} ,
+                   new AjaxOptions { UpdateTargetId = "d1" ,
+                   InsertionMode = InsertionMode.Replace,
+                   OnComplete = "show"})</td>
+                @*<td>@Html.ActionLink("View details", "details", new { id = i.id })</td>*@
                 <td>@Html.ActionLink("Edit", "edit", new { id = i.id }, new { @class = "btn btn-info" })</td>
                 <td>@Html.ActionLink("Delete", "delete", new { id = i.id }, new { @class = "btn btn-danger" })</td>
             </tr>
@@ -30,3 +54,8 @@
     }
 </table>
 
+<script>
+    function show() {
+        $("#d1").modal({ show: true })
+    }
+</script>

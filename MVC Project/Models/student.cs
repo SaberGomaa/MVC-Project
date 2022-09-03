@@ -6,6 +6,8 @@ namespace MVC_Project.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
+    using CompareAttribute = System.ComponentModel.DataAnnotations.CompareAttribute;
 
     [Table("student")]
     public partial class student
@@ -27,6 +29,7 @@ namespace MVC_Project.Models
         [RegularExpression("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$" , ErrorMessage ="Invalid Email")]
         [Required(ErrorMessage ="*")]
         [StringLength(50)]
+        [Remote("check" , "students" , AdditionalFields ="id" , ErrorMessage ="Exist Email" )]
         public string Email { get; set; }
 
         
@@ -38,7 +41,7 @@ namespace MVC_Project.Models
 
         [DisplayName("confirm password")]
         [NotMapped]
-        [Compare("password" , ErrorMessage ="not matched password")]
+        [Compare("password", ErrorMessage = "not matched password")]
         public string confirm_password { get; set; }
 
 
